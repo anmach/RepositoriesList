@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="table_columns_space">10pt</dimen>
+    <dimen name="table_rows_space">8pt</dimen>
+    <dimen name="table_padding">12pt</dimen>
+    <dimen name="recycler_view_row_padding">8pt</dimen>
+</resources>

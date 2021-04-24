@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Allegro Repositories List</string>
+
+    <string name="repo_name">Name:</string>
+    <string name="repo_full_name">Full Name:</string>
+    <string name="repo_html_url">Url:</string>
+    <string name="repo_copy_url">Copy Url:</string>
+    <string name="repo_description">Description:</string>
+    <string name="repo_language">Languages:</string>
+    <string name="repo_size">Size:</string>
+    <string name="repo_stargazers">Stargazers:</string>
+    <string name="repo_watchers">Watchers:</string>
+    <string name="repo_subscribers">Subscribers:</string>
+    <string name="repo_forks">Forks:</string>
+    <string name="repo_open_issues">Open Issues:</string>
+    <string name="repo_is_template">Is Template:</string>
+    <string name="repo_has_issues">Has Issues:</string>
+    <string name="repo_has_projects">Has Projects:</string>
+    <string name="repo_has_wiki">Has Wiki:</string>
+    <string name="repo_has_pages">Has Pages:</string>
+    <string name="repo_has_downloads">Has Downloads:</string>
+    <string name="repo_archived">Archived:</string>
+    <string name="repo_license_name">License Name:</string>
+
+    <string name="negative_answer">No</string>
+    <string name="positive_answer">Yes</string>
+    <string name="no_answer">---</string>
+    <string name="copy_url">copy url</string>
+
+    <string name="intent_extra_repo_name">repo_name</string>
+
+    <string name="info_url_copied">Url copied to clipboard</string>
+</resources>
