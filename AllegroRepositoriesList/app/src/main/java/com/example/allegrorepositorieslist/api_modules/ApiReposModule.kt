@@ -9,10 +9,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-fun runReposService(onResponseGot: (List<RepoBaseModel>) -> Unit){
+fun runReposService(onResponseGot: (List<RepoBaseModel>) -> Unit, onNoResponse: () -> Unit){
     getReposService().getRepos().enqueue(object : Callback<List<RepoBaseModel>> {
         override fun onFailure(call: Call<List<RepoBaseModel>>, t: Throwable) {
             Log.d("REPOS_SERVICE", "An error happened!")
+            onNoResponse()
             t.printStackTrace()
         }
 
@@ -21,6 +22,7 @@ fun runReposService(onResponseGot: (List<RepoBaseModel>) -> Unit){
                 onResponseGot(response.body()!!)
             }
             else{
+                onNoResponse()
                 Log.d("REPOS_SERVICE", "Got nothing in response")
             }
         }

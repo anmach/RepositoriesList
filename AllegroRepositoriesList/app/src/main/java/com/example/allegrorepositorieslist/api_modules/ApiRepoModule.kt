@@ -1,7 +1,6 @@
 package com.example.allegrorepositorieslist.api_modules
 
 import android.util.Log
-import com.example.allegrorepositorieslist.model.RepoBaseModel
 import com.example.allegrorepositorieslist.model.RepoModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -11,10 +10,11 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-fun runRepoService(repoName: String, onResponeGot: (RepoModel) -> Unit){
+fun runRepoService(repoName: String, onResponeGot: (RepoModel) -> Unit, onNoResponse: () -> Unit){
     getRepoService().getRepo(repoName).enqueue(object : Callback<RepoModel> {
         override fun onFailure(call: Call<RepoModel>, t: Throwable) {
             Log.d("REPO_SERVICE", "An error happened!")
+            onNoResponse()
             t.printStackTrace()
         }
 
@@ -24,6 +24,7 @@ fun runRepoService(repoName: String, onResponeGot: (RepoModel) -> Unit){
                 Log.d("REPO_SERVICE", response.body().toString())
             }
             else{
+                onNoResponse()
                 Log.d("REPO_SERVICE", "Got nothing in response")
             }
         }

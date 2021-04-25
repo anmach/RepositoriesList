@@ -21,7 +21,7 @@ class RepoDetailsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if(repoName != null){
-            runRepoService(repoName) {
+            runRepoService(repoName, {
                 setTextViews(it)
                 findViewById<ProgressBar>(R.id.progressBarDetailsScreen).setVisibility(View.GONE);
                 findViewById<ImageButton>(R.id.imageButtonCopyUrl).setOnClickListener(View.OnClickListener {
@@ -31,7 +31,10 @@ class RepoDetailsActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, getString(R.string.info_url_copied), Toast.LENGTH_SHORT).show()
                 })
                 findViewById<TableLayout>(R.id.tableLayoutDetails).visibility = View.VISIBLE
-            }
+            }, {
+                findViewById<ProgressBar>(R.id.progressBarDetailsScreen).setVisibility(View.GONE);
+                Toast.makeText(applicationContext, getString(R.string.info_no_response), Toast.LENGTH_SHORT).show()
+            })
         }
     }
 

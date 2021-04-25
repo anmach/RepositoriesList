@@ -30,4 +30,5 @@
     <string name="intent_extra_repo_name">repo_name</string>
 
     <string name="info_url_copied">Url copied to clipboard</string>
+    <string name="info_no_response">Unexpected error occurred</string>
 </resources>
